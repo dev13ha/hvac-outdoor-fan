@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @hvac/outdoor-fan. The impeller follows shaft torque from the fan motor. -->
+<scxml xmlns="http://www.w3.org/2005/07/scxml"
+       version="1.0"
+       datamodel="ecmascript"
+       initial="stopped"
+       name="OutdoorAxialFan">
+  <datamodel>
+    <data id="rpm" expr="0"/>
+  </datamodel>
+
+  <state id="stopped">
+    <onentry>
+      <send event="fan.stopped"/>
+    </onentry>
+    <transition event="shaft.torque" target="driving" cond="rpm == 0"/>
+    <transition event="wind" target="windmilling"/>
+  </state>
+
+  <state id="windmilling">
+    <onentry>
+      <assign location="rpm" expr="40"/>
+    </onentry>
+    <transition event="shaft.torque" target="driving"/>
+    <transition event="wind.calm" target="stopped"/>
+  </state>
+
+  <state id="driving">
+    <onentry>
+      <assign location="rpm" expr="850"/>
+      <send event="fan.driving"/>
+    </onentry>
+    <transition event="shaft.coast" target="stopped"/>
+    <transition event="overspeed" target="stalled"/>
+    <transition event="blade.strike" target="stalled"/>
+  </state>
+
+  <state id="stalled">
+    <onentry>
+      <assign location="rpm" expr="0"/>
+      <send event="fan.stalled"/>
+    </onentry>
+    <transition event="shaft.coast" target="stopped"/>
+  </state>
+</scxml>

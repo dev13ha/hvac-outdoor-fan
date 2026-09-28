@@ -1,0 +1,5 @@
+[package]
+name = "@hvac/outdoor-fan"
+version = "1.0.0"
+edition = "2026"
+description = "Outdoor fan. Leaf package. Geometry is 1. Outdoor fan.SLDPRT. The fan motor depends on this package."

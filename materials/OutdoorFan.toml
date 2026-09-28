@@ -1,0 +1,31 @@
+# Material artifact for @hvac/outdoor-fan.
+# Constituent ids match part names in model/OutdoorFan.sysml.
+
+[assembly]
+package = "@hvac/outdoor-fan"
+part = "OutdoorAxialFan"
+cad = "1. Outdoor fan.SLDPRT"
+unit_mass_kg = 0.62
+diameter_mm = 420
+blade_count = 3
+design_rpm = 850
+
+[[constituent]]
+id = "blades"
+sysml_part = "GlassFilledPolypropyleneBlade"
+material = "polypropylene"
+grade = "PP-GF30"
+role = "axial blades"
+mass_kg = 0.28
+density_g_cm3 = 1.12
+blade_count = 3
+
+[[constituent]]
+id = "hub"
+sysml_part = "SinteredSteelHub"
+material = "sintered steel"
+grade = "FN-0205"
+role = "shaft hub"
+mass_kg = 0.34
+density_g_cm3 = 6.9
+bore_mm = 12.0
