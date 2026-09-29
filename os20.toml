@@ -1,5 +1,65 @@
 [package]
 name = "@hvac/outdoor-fan"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2026"
 description = "Outdoor fan. Leaf package. Geometry is 1. Outdoor fan.SLDPRT. The fan motor depends on this package."
+
+[[artifacts]]
+name = "fan-geometry"
+kind = "geometry"
+format = "sldprt"
+
+[artifacts.semantic]
+relation = "core:represents"
+target = "os20:@hvac/outdoor-fan"
+
+[artifacts.source]
+provider = "github"
+repo = "dev13ha/hvac-outdoor-fan"
+revision = "6c20eb28e4fd98a8f6414f37d37e41f2db7f9909"
+path = "1. Outdoor fan.SLDPRT"
+
+[[artifacts]]
+name = "fan-model"
+kind = "model"
+format = "sysml"
+
+[artifacts.semantic]
+relation = "core:describes"
+target = "os20:@hvac/outdoor-fan"
+
+[artifacts.source]
+provider = "github"
+repo = "dev13ha/hvac-outdoor-fan"
+revision = "6c20eb28e4fd98a8f6414f37d37e41f2db7f9909"
+path = "model/OutdoorFan.sysml"
+
+[[artifacts]]
+name = "fan-behavior"
+kind = "behavior"
+format = "scxml"
+
+[artifacts.semantic]
+relation = "core:simulates"
+target = "os20:@hvac/outdoor-fan"
+
+[artifacts.source]
+provider = "github"
+repo = "dev13ha/hvac-outdoor-fan"
+revision = "6c20eb28e4fd98a8f6414f37d37e41f2db7f9909"
+path = "behavior/OutdoorFan.scxml"
+
+[[artifacts]]
+name = "fan-materials"
+kind = "materials"
+format = "toml"
+
+[artifacts.semantic]
+relation = "core:specifies"
+target = "os20:@hvac/outdoor-fan"
+
+[artifacts.source]
+provider = "github"
+repo = "dev13ha/hvac-outdoor-fan"
+revision = "6c20eb28e4fd98a8f6414f37d37e41f2db7f9909"
+path = "materials/OutdoorFan.toml"
