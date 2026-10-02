@@ -1,5 +1,5 @@
 [package]
-name = "@hvac/outdoor-fan"
+name = "@hvace/outdoor-fan"
 version = "1.0.1"
 edition = "2026"
 description = "Outdoor fan. Leaf package. Geometry is 1. Outdoor fan.SLDPRT. The fan motor depends on this package."
@@ -11,7 +11,7 @@ format = "sldprt"
 
 [artifacts.semantic]
 relation = "core:represents"
-target = "os20:@hvac/outdoor-fan"
+target = "os20:@hvace/outdoor-fan"
 
 [artifacts.source]
 provider = "github"
@@ -26,7 +26,7 @@ format = "sysml"
 
 [artifacts.semantic]
 relation = "core:describes"
-target = "os20:@hvac/outdoor-fan"
+target = "os20:@hvace/outdoor-fan"
 
 [artifacts.source]
 provider = "github"
@@ -41,7 +41,7 @@ format = "scxml"
 
 [artifacts.semantic]
 relation = "core:simulates"
-target = "os20:@hvac/outdoor-fan"
+target = "os20:@hvace/outdoor-fan"
 
 [artifacts.source]
 provider = "github"
@@ -56,7 +56,7 @@ format = "toml"
 
 [artifacts.semantic]
 relation = "core:specifies"
-target = "os20:@hvac/outdoor-fan"
+target = "os20:@hvace/outdoor-fan"
 
 [artifacts.source]
 provider = "github"
